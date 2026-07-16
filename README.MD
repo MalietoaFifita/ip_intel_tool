@@ -24,6 +24,7 @@ APIs used
 
 How to run
 - download and install python 3 on your computer
+- ensure you have the requests module on your python
 - Download all the files
 - navigate the saved files in the command prompt
 - run this command

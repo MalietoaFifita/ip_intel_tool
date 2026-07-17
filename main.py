@@ -21,3 +21,13 @@ while True:
     data = fetch_ip_data(ip)
     fields = extract_data(data)
     print_report(fields)
+
+    while True:
+        again = input("Would you like to lookup the ip again? (y/n): ").lower()
+        if again == "y":
+            break
+        elif again =="n":
+            exit()
+        else:
+            print("Please enter y/n")
+        

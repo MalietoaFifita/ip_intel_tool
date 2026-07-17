@@ -14,6 +14,6 @@ def fetch_ip_data(ip):
     except Exception as e:
         return{
             "status": "fail",
-            "message": "str(e)"
+            "message": str(e)
         }
 

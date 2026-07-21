@@ -6,7 +6,7 @@ call API client
 call report generator
 """
 from api_client import fetch_ip_data
-from ip_utils import valid_ip
+from ip_utils import valid_ip, save_report
 from report import extract_data, print_report
 
 #while loop to continue to ask user for an IP they would like to pull data on. If the IP is invalid using the validation function from utils, then it will prompt the user to for an IP again
@@ -21,6 +21,17 @@ while True:
     data = fetch_ip_data(ip)
     fields = extract_data(data)
     print_report(fields)
+
+    while True:
+        save = input("Would you like to save the report? (y/n)")
+        if save == "y":
+            save_report(fields)
+            print("Report saved successfully as 'ip_reports.txt'")
+            break
+        elif save == "n":
+            break
+        else:
+            print("Please enter y/n")
 
     while True:
         again = input("Would you like to lookup the ip again? (y/n): ").lower()

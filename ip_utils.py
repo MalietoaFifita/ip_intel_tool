@@ -16,3 +16,10 @@ def valid_ip(ip):
             return False
         
     return True
+
+def save_report(fields):
+    with open("ip_reports.txt", "a") as f:
+        f.write("IP REPORT\n")
+        for key, value in fields.items():
+            f.write(f"{key}: {value}\n")
+        f.write("\n")

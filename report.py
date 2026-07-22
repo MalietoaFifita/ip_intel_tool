@@ -5,7 +5,7 @@ color
 
 summary
 """
-
+from datetime import datetime
 #ANSI color escape codesGREEN = "\033[92m"
 GREEN = "\033[92m"
 RED = "\033[91m"
@@ -37,6 +37,10 @@ def print_report(fields):
     if fields["status"] != "success":
         print(f"{RED}IP lookup {fields['status']}. IP invalid or unreachable{RESET}")
         return
+
+    #get timestamp for report
+    timestamp = datetime.now().strftime("%Y/%m/%d, %H:%M:%S")
+    print(f"TimeStamp: {timestamp}")
     
     print(f"{GREEN}IP: {fields['ip']}{RESET}")
     print(f"Country: {fields['country']}")

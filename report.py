@@ -18,12 +18,19 @@ def extract_data(data):
         "ip" : data.get("query"),
         "status" : data.get("status"),
         "country" : data.get("country"),
+        "region": data.get("regionName"),
         "city" : data.get("city"),
+        "zip": data.get("zip"),
+        "asn": data.get("as"),
+        "reverse dns": data.get("reverse"),
+        "mobile": data.get("mobile"),
         "isp" : data.get("isp"),
         "org" : data.get("org"),
         "timezone" : data.get("timezone"),
         "latitude" : data.get("lat"),
-        "longitude" : data.get("lon")
+        "longitude" : data.get("lon"),
+        "proxy": data.get("proxy"),
+        "hosting": data.get("hosting")
     }
 
 #function used to print data from the dictionary object and format the data into a user friendly way
@@ -44,9 +51,16 @@ def print_report(fields):
     
     print(f"{GREEN}IP: {fields['ip']}{RESET}")
     print(f"Country: {fields['country']}")
+    print(f"Region: {fields['region']}")
     print(f"City: {fields['city']}")
+    print(f"Zip: {fields['zip']}")
+    print(f"ASN: {fields['asn']}")
+    print(f"Reverse DNS: {fields['reverse dns']}")
+    print(f"Mobile: {fields['mobile']}")
     print(f"Internet Service Provider: {fields['isp']}")
     print(f"Organization: {fields['org']}")
     print(f"TimeZone: {fields['timezone']}")
     print(f"Latitude and Longitude: {fields['latitude']} , {fields['longitude']}")
+    print(f"Proxy: {fields['proxy']}")
+    print(f"Hosting: {fields['hosting']}")
 

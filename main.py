@@ -5,6 +5,8 @@ call API client
 
 call report generator
 """
+import os
+
 from api_client import fetch_ip_data
 from ip_utils import valid_ip, save_report
 from report import extract_data, print_report
@@ -20,7 +22,13 @@ while True:
 
     data = fetch_ip_data(ip)
     fields = extract_data(data)
-    print_report(fields)
+
+    if data.get("status") != "success":
+        print("API Lookup Failed. Please try again")
+        continue
+    else:
+        os.system("cls" if os.name == "nt" else "clear")
+        print_report(fields)
 
     while True:
         save = input("Would you like to save the report? (y/n)")

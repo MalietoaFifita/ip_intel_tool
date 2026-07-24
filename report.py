@@ -56,11 +56,25 @@ def print_report(fields):
     print(f"Zip: {fields['zip']}")
     print(f"ASN: {fields['asn']}")
     print(f"Reverse DNS: {fields['reverse dns']}")
-    print(f"Mobile: {fields['mobile']}")
+
+    if fields["mobile"]:
+        print(f"{YELLOW}Mobile: {fields['mobile']}{RESET}")
+    else:
+        print(f"{GREEN}Mobile: {fields['mobile']}{RESET}")
+    
     print(f"Internet Service Provider: {fields['isp']}")
     print(f"Organization: {fields['org']}")
     print(f"TimeZone: {fields['timezone']}")
     print(f"Latitude and Longitude: {fields['latitude']} , {fields['longitude']}")
-    print(f"Proxy: {fields['proxy']}")
-    print(f"Hosting: {fields['hosting']}")
+
+    if fields["proxy"]:
+        print(f"{RED}Proxy: {fields['proxy']}{RESET}")
+    else:   
+        print(f"{GREEN}Proxy: {fields['proxy']}{RESET}")
+
+    if fields["hosting"]:
+        print(f"{RED}Hosting: {fields['hosting']}{RESET}")
+    else:
+        print(f"{GREEN}Hosting: {fields['hosting']}{RESET}")
+        
 
